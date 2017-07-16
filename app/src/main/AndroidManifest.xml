@@ -1,0 +1,28 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+    package="com.nineg.test.quicksetting">
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_settings_applications_white_24dp"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_settings_applications_white_24dp"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".EntryDummyActivity"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".FloatingWindowService"
+            android:exported="false">
+        </service>>
+    </application>
+
+</manifest>
