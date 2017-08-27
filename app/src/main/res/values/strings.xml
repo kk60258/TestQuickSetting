@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">TestQuickSetting</string>
+    <string name="app_name_float">TestQSFloating</string>
+    <string name="app_name_panel">TestQSPanel</string>
+
+    <!-- Label for feature switch [CHAR LIMIT=30] -->
+    <string name="switch_bar_on">On</string>
+    <!-- Label for feature switch [CHAR LIMIT=30] -->
+    <string name="switch_bar_off">Off</string>
+
+
+    <!-- QuickSettings: Flashlight [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_flashlight_label">Flashlight</string>
+
+
+    <!-- Content description of the flashlight tile in quick settings when unavailable (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_flashlight_unavailable">Flashlight unavailable.</string>
+
+    <!-- Announcement made when the flashlight state changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_flashlight_changed_on">Flashlight turned on.</string>
+    <!-- Announcement made when the flashlight state changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_flashlight_changed_off">Flashlight turned off.</string>
+
 </resources>

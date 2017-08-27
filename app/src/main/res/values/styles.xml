@@ -8,4 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TextAppearance" />
+
+    <style name="TextAppearance.QS">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/qs_text</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.QS.TileLabel">
+        <item name="android:textSize">@dimen/qs_tile_text_size</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
 </resources>
