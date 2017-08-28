@@ -3,6 +3,7 @@ package com.nineg.test.quicksetting;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
@@ -17,6 +18,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 /**
  * Created by nineg on 2017/7/16.
@@ -76,7 +81,7 @@ public class FloatingWindowService extends Service {
         mScreenWidth = metrics.widthPixels;
         mScreenHeight = metrics.heightPixels;
 
-        mLayoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+        mLayoutParams.type = 2016;//getWindowType(mWindowManager);
         mLayoutParams.format = PixelFormat.RGBA_8888;
         // 设置Window flag
         mLayoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
@@ -98,6 +103,19 @@ public class FloatingWindowService extends Service {
             }
         });
 
+    }
+
+
+    public static int getWindowType(WindowManager manager) {
+        try {
+            Field field = WindowManager.class.getDeclaredField("TYPE_DRAG");
+            return field.getInt(manager);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     private class FloatGestrueTouchListener implements GestureDetector.OnGestureListener {
@@ -130,6 +148,7 @@ public class FloatingWindowService extends Service {
             int dy = (int) e2.getRawY() - lastY;
             mLayoutParams.x = paramX + dx;
             mLayoutParams.y = paramY + dy;
+//            mLayoutParams.type = WindowManager.LayoutParams.TYPE_TOAST;
             // 更新悬浮窗位置
             mWindowManager.updateViewLayout(mFloatView, mLayoutParams);
             return true;

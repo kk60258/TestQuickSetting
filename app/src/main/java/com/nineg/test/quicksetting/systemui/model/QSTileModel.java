@@ -9,7 +9,7 @@ import android.os.UserHandle;
 
 public class QSTileModel {
     public static String getString(ContentResolver resolver, String name) {
-        return "";
+        return null;
     }
 
     public static boolean putString(ContentResolver resolver, String name, String value) {
